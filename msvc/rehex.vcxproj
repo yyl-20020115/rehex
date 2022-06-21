@@ -28,26 +28,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -213,6 +213,7 @@
     <ClCompile Include="..\src\BytesPerLineDialog.cpp" />
     <ClCompile Include="..\src\ByteRangeSet.cpp" />
     <ClCompile Include="..\src\CharacterEncoder.cpp" />
+    <ClCompile Include="..\src\CharacterFinder.cpp" />
     <ClCompile Include="..\src\ClickText.cpp" />
     <ClCompile Include="..\src\CodeCtrl.cpp" />
     <ClCompile Include="..\src\CommentTree.cpp" />
@@ -283,6 +284,7 @@
     <ClInclude Include="..\src\ByteRangeMap.hpp" />
     <ClInclude Include="..\src\BytesPerLineDialog.hpp" />
     <ClInclude Include="..\src\ByteRangeSet.hpp" />
+    <ClInclude Include="..\src\CharacterFinder.hpp" />
     <ClInclude Include="..\src\ClickText.hpp" />
     <ClInclude Include="..\src\CodeCtrl.hpp" />
     <ClInclude Include="..\src\CommentTree.hpp" />
@@ -325,19 +327,19 @@
   <ItemGroup>
     <CustomBuild Include="..\src\lua-bindings\rehex_rules.lua">
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cd .. &amp;&amp; vcpkg\vcpkg\installed\x64-windows-static\tools\lua\lua.exe -e"rulesFilename=\"src/lua-bindings/rehex_rules.lua\"" wxLua/bindings/genwxbind.lua</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cd .. &amp;&amp; msvc\vcpkg\installed\x64-windows-static\tools\lua\lua.exe -e"rulesFilename=\"src/lua-bindings/rehex_rules.lua\"" wxLua/bindings/genwxbind.lua</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\lua-bindings\rehex_bind.h;..\src\lua-bindings\rehex_bind.cpp;..\src\lua-bindings\rehex_datatypes.lua;%(Outputs)</Outputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\lua-bindings\FuncWrapper.hpp;..\src\lua-bindings\rehex.i;..\src\lua-bindings\rehex_override.hpp;%(AdditionalInputs)</AdditionalInputs>
       <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BuildInParallel>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cd .. &amp;&amp; vcpkg\vcpkg\installed\x64-windows-static\tools\lua\lua.exe -e"rulesFilename=\"src/lua-bindings/rehex_rules.lua\"" wxLua/bindings/genwxbind.lua</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cd .. &amp;&amp; msvc\vcpkg\installed\x64-windows-static\tools\lua\lua.exe -e"rulesFilename=\"src/lua-bindings/rehex_rules.lua\"" wxLua/bindings/genwxbind.lua</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\lua-bindings\rehex_bind.h;..\src\lua-bindings\rehex_bind.cpp;..\src\lua-bindings\rehex_datatypes.lua;%(Outputs)</Outputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\lua-bindings\FuncWrapper.hpp;..\src\lua-bindings\rehex.i;..\src\lua-bindings\rehex_override.hpp;%(AdditionalInputs)</AdditionalInputs>
       <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</BuildInParallel>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cd .. &amp;&amp; vcpkg\vcpkg\installed\x64-windows-static\tools\lua\lua.exe -e"rulesFilename=\"src/lua-bindings/rehex_rules.lua\"" wxLua/bindings/genwxbind.lua</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cd .. &amp;&amp; msvc\vcpkg\installed\x64-windows-static\tools\lua\lua.exe -e"rulesFilename=\"src/lua-bindings/rehex_rules.lua\"" wxLua/bindings/genwxbind.lua</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\src\lua-bindings\rehex_bind.h;..\src\lua-bindings\rehex_bind.cpp;..\src\lua-bindings\rehex_datatypes.lua;%(Outputs)</Outputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\src\lua-bindings\FuncWrapper.hpp;..\src\lua-bindings\rehex.i;..\src\lua-bindings\rehex_override.hpp;%(AdditionalInputs)</AdditionalInputs>
       <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cd .. &amp;&amp; vcpkg\vcpkg\installed\x64-windows-static\tools\lua\lua.exe -e"rulesFilename=\"src/lua-bindings/rehex_rules.lua\"" wxLua/bindings/genwxbind.lua</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cd .. &amp;&amp; msvc\vcpkg\installed\x64-windows-static\tools\lua\lua.exe -e"rulesFilename=\"src/lua-bindings/rehex_rules.lua\"" wxLua/bindings/genwxbind.lua</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\src\lua-bindings\rehex_bind.h;..\src\lua-bindings\rehex_bind.cpp;..\src\lua-bindings\rehex_datatypes.lua;%(Outputs)</Outputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\src\lua-bindings\FuncWrapper.hpp;..\src\lua-bindings\rehex.i;..\src\lua-bindings\rehex_override.hpp;%(AdditionalInputs)</AdditionalInputs>
       <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</BuildInParallel>

@@ -23,6 +23,7 @@
 #include <string>
 #include <vector>
 #include <wx/window.h>
+#include <src/platform.hpp>
 
 namespace REHex {
 	class ParseError: public std::runtime_error
